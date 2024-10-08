@@ -53,10 +53,41 @@ const users = [
 ]
 
 users[1].email
-console.log(User)
-console.log(Object.keys(User))      // output ka datatype array ayega
-console.log(Object.values(User))
-console.log(Object.entries(User))       // har key values ko array bana deta hai
+// console.log(User)
+// console.log(Object.keys(User))      // output ka datatype array ayega
+// console.log(Object.values(User))
+// console.log(Object.entries(User))       // har key values ko array bana deta hai
 
 
-console.log(User.hasOwnProperty('isLoggedIn'))      // search for properties (boolean type output)
+// console.log(User.hasOwnProperty('isLoggedIn'))      // search for properties (boolean type output)
+
+
+
+
+
+///////////////////////////////// destructuring of objects ///////////////////////////////////////////
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "harshit"
+}
+
+// course.courseInstructor          // to print
+
+// to print same thing more than once
+
+const {courseInstructor} = course       // = ke baad - kaha se extract krni hai    // {} ke andr - kya extract krna hai
+console.log(courseInstructor);
+
+const {courseInstructor: instructor} = course   // agr name kuch jyda bada hai to : use krke name chnge kr skte hai
+console.log(instructor)
+
+
+// JSON (JavaScript Object Notation)
+
+// {
+//     name: "harshit",
+//     coursename: "js in hindi",
+//     price: "999",
+// }
