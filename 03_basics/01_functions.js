@@ -46,7 +46,7 @@ function loginUserMessgae(username){
 
 // using if-statement
 
-function loginUserMessgae(username){
+function loginUserMessage(username){
     if(username === undefined){
         console.log("Please enter a username");
         return
@@ -54,9 +54,10 @@ function loginUserMessgae(username){
     return `${username} just logged in`
 }
 // OR (equivalent code)
-function loginUserMessgae(username){
+function loginUserMessage(username){
     if(!username){
         console.log("Please enter a username");
     }
     return `${username} just logged in`
 }
+console.log(loginUserMessage("harshit"))
