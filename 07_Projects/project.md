@@ -249,3 +249,56 @@ span {
 </html>
 
 ```
+## Project 3 : Digital Clock
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Your Local Time</title>
+    <style>
+      body {
+        background-color: #dbdd4a;
+        color: #fff;
+      }
+      .center {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      #clock {
+        font-size: 40px;
+        font: oblique 20px "Consolas", sans-serif;
+        background-color: rgb(0, 183, 255);
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 75px;
+        box-shadow: 30px 30px 70px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="https://www.linkedin.com/in/harshitraj1510/" target="_blank" class="linkedin-link">
+        <img src="linkedin.png" alt="LinkedIn" style="width: 30px; height: 30px;">
+      </a>
+    </nav>
+    <div class="center">
+      <div id="clock"></div>
+    </div>
+    <script>
+        const clock = document.getElementById('clock');
+        
+        setInterval(function (){
+            let date = new Date();
+            clock.innerHTML = date.toLocaleTimeString();
+        }, 1000)
+    </script>
+  </body>
+</html>
+
+```
