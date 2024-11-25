@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Harshit </h1>
+    <button id ="start">Start</button>
+    <button id ="stop">Stop</button>
+</body>
+<script>
+    setInterval(function(){              // setInterval hr ek interval ke baad continuous execute hoga 
+        console.log("Harshit", Date.now());
+    }, 2000)
+
+    // another method using variable hold
+
+    const sayDate = function(str){             // yaha parameter bhi pass ho jate hai
+        console.log(str, Date.now());
+    }
+    setInterval(sayDate, 2000, "hi")
+
+    // clearInterval
+
+    const intervalId = setInterval(sayDate, 2000, "hi")
+    clearInterval(intervalId)
+</script>
+</html>

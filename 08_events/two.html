@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Harshit </h1>
+    <button id ="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){          // setTimeout ek hi bar execute krega lekin given time ke baad
+        cosnole.log("Harshit");
+    }, 2000)                    // }, iske baad time millisecond me hota hai to 2000 mtlb 2 sec ka wait
+
+    // another method using variable hold
+
+    const sayHarshit = function(){
+        console.log("Harshit");
+    }
+    setTimeout(sayHarshit, 2000)
+
+    // using setTimeout in changing text
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Amar"
+    }
+    // setTimeout(changeText, 3000)             // cmntd due to next topic
+
+    // stopping setTimeout using clearTimeout using Event listener
+
+    const changeMe = setTimeout(changeText, 3000)
+    document.querySelector('#stop').                    // in line 9, id of the Stop button is stop
+    addEventListener('click',function(){            // adding click event on stop button
+        clearTimeout(changeMe)                  // clearTimeout to stop the setTimeout
+        console.log("STOPPED")
+    })
+</script>
+</html>
