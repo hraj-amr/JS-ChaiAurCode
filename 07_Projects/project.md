@@ -541,3 +541,198 @@ button:hover {
 </body>
 </html>
 ```
+
+## Project 5 : Random Background Color Change
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Unlimited Color</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      button {
+        padding: 12px 24px;
+        background-color: #4caf50;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+
+      button#stop {
+        background-color: #f44336;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      button#stop:hover {
+        background-color: #d32f2f;
+      }
+
+    </style>
+  </head>
+  <body style="background-color: #ffffff; color: #000000">
+    <nav>
+        <a href="https://www.linkedin.com/in/harshitraj1510/" target="_blank" class="linkedin-link">
+          <img src="linkedin.png" alt="LinkedIn" style="width: 30px; height: 30px;">
+        </a>
+      </nav>
+    <h1>Unlimited Colors Project</h1>
+    <h2>Click 'Start' to change background color randomly</h2>
+
+    <div class="button-container">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+    <script>
+        const randomColor = function(){
+            const hex = "0123456789ABCDEF"
+            let color = "#"
+            for(let i = 0; i<6; i++){
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        };
+        let intervalId;
+        const startChangingColor = function(){
+            if(!intervalId){
+                intervalId = setInterval(changeBgColor, 1000);
+            }
+            function changeBgColor(){
+                document.body.style.backgroundColor = randomColor();
+            }
+        };
+        const stopChangingColor = function(){
+            clearInterval(intervalId)
+            intervalId = null;
+        };
+        document.querySelector("#start").addEventListener('click', startChangingColor);
+        document.querySelector("#stop").addEventListener('click', stopChangingColor);
+    </script>
+</body>
+</html>
+```
+
+## Project 6 : KeyCode
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeyCode</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: cursive;
+        background: #f5f5f5;
+        background: radial-gradient(circle, #ff3300, #ffb175);
+        color: #ffffff;
+      }
+
+      .project {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .key {
+        font-size: 32px;
+        margin-bottom: 30px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 95%;
+        max-width: 900px;
+        margin: auto;
+        background-color: #1c1c1c;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        border: 1px solid #e7e7e7;
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #292929;
+      }
+
+      tr:nth-child(even) {
+        background-color: #2a2a2a;
+      }
+
+      tr:hover {
+        background-color: inherit;
+      }
+
+      .color {
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <a href="https://www.linkedin.com/in/harshitraj1510/" target="_blank" class="linkedin-link">
+          <img src="linkedin.png" alt="LinkedIn" style="width: 30px; height: 30px;">
+        </a>
+      </nav>
+    <div class="project">
+      <div class="key">Want to know the keycode of any key?
+        <br>
+        Press it to know them...
+      </div>
+      <div id="insert"></div>
+    </div>
+    <script>
+      const insert = document.getElementById('insert')
+      window.addEventListener('keydown', (e) => {
+        insert.innerHTML = `
+        <div class='color'>
+          <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' '?'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+</div>
+        `})
+    </script>
+</body>
+</html>
+```
