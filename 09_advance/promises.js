@@ -102,7 +102,8 @@ consumePromiseFive()
 
 
 
-// same kaam ko .then(), .catch() format likhna ho to
+
+// same kaam ko .then(), .catch() format likhna ho to       // ------Fetch------ 
 
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
